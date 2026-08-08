@@ -7,6 +7,7 @@ import {
   BarChart3,
   Bot,
   Code2,
+  FlaskConical,
   Layers3,
   Menu,
   MousePointer2,
@@ -24,23 +25,23 @@ import {
 const capabilities = [
   {
     number: "01",
-    title: "Digital Presence",
+    title: "Better websites",
     description:
-      "Digital experiences that establish authority, capture attention, and turn interest into meaningful action.",
+      "Digital experiences that are clear, fast, useful, and built to actually help your business move.",
     icon: Code2,
   },
   {
     number: "02",
-    title: "Business Systems",
+    title: "Smarter systems",
     description:
-      "Connected platforms, workflows, dashboards, and automations shaped around the way your business really operates.",
+      "Custom tools, dashboards, workflows, and automations built around the way your business really works.",
     icon: Workflow,
   },
   {
     number: "03",
-    title: "Intelligent Assistance",
+    title: "Less boring work",
     description:
-      "Focused tools that organize information, reduce repetitive work, and give your team more room to think.",
+      "Useful technology that handles repetitive work and gives your team more time for the things that matter.",
     icon: Bot,
   },
 ];
@@ -50,56 +51,52 @@ const systemLayers = [
     id: "presence",
     number: "01",
     label: "Presence",
-    title: "Make every interaction carry weight.",
+    title: "Make a better first impression.",
     description:
-      "Your website becomes an active part of the business. It communicates clearly, captures demand, and connects customers to the right next step.",
-    outcome: "Position clearly. Convert deliberately. Stay memorable.",
+      "Your website should make it easy for people to understand who you are, what you do, and what they should do next.",
+    outcome: "Clearer message. Better experience. More useful attention.",
     icon: Code2,
   },
   {
     id: "operations",
     number: "02",
     label: "Operations",
-    title: "Bring scattered work into one flow.",
+    title: "Make everyday work easier.",
     description:
-      "Replace fragile spreadsheets, disconnected tools, and repeated manual tasks with systems designed around your actual operation.",
-    outcome: "Reduce friction. Improve visibility. Move consistently.",
+      "Replace messy spreadsheets, repeated tasks, and disconnected tools with systems built around your actual workflow.",
+    outcome: "Less admin. Less confusion. Better flow.",
     icon: Workflow,
   },
   {
     id: "intelligence",
     number: "03",
-    label: "Intelligence",
-    title: "Turn activity into usable direction.",
+    label: "Insight",
+    title: "Know what is happening.",
     description:
-      "Focused reporting and decision-support tools surface the signals that matter, without burying your team under another dashboard.",
-    outcome: "Understand faster. Decide earlier. Act with context.",
+      "Turn business activity into simple, useful information that helps you understand what needs attention.",
+    outcome: "Better visibility. Faster decisions. Fewer surprises.",
     icon: BarChart3,
   },
   {
     id: "assistance",
     number: "04",
     label: "Assistance",
-    title: "Move repetitive work out of the way.",
+    title: "Give repetitive work somewhere else to go.",
     description:
-      "Purpose-built assistants help coordinate tasks, structure information, and support the everyday work that quietly consumes entire weeks.",
-    outcome: "Protect focus. Reduce admin. Increase capacity.",
+      "Smart assistants can help organize information, support teams, and remove some of the repetitive work from your day.",
+    outcome: "More focus. Less busywork. More room to think.",
     icon: Bot,
   },
 ];
 
 const navigationItems = [
   {
-    id: "capabilities",
-    label: "Capabilities",
+    id: "building",
+    label: "What we're building",
   },
   {
-    id: "system",
-    label: "System",
-  },
-  {
-    id: "vision",
-    label: "Vision",
+    id: "why",
+    label: "Why Sylvexa",
   },
 ];
 
@@ -116,17 +113,11 @@ export default function Home() {
     offset: ["start start", "end start"],
   });
 
-  const heroContentY = useTransform(scrollYProgress, [0, 1], [0, 75]);
+  const heroContentY = useTransform(scrollYProgress, [0, 1], [0, 70]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0.25]);
 
   useEffect(() => {
-    const sectionIds = [
-      "top",
-      "capabilities",
-      "system",
-      "vision",
-      "launch",
-    ];
+    const sectionIds = ["top", "building", "why", "launch"];
 
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
@@ -202,7 +193,6 @@ export default function Home() {
             </span>
 
             <span className="header-brand-name">SYLVEXA</span>
-            <span className="header-brand-edition">01</span>
           </a>
 
           <nav
@@ -219,6 +209,11 @@ export default function Home() {
                 <span className="navigation-indicator" />
               </a>
             ))}
+
+            <a href="/lab">
+              <span>Lab</span>
+              <span className="navigation-indicator" />
+            </a>
           </nav>
 
           <div className="header-actions">
@@ -227,12 +222,12 @@ export default function Home() {
 
               <span className="header-status-copy">
                 <small>Status</small>
-                In development
+                Building now
               </span>
             </div>
 
-            <a className="header-launch-button" href="#launch">
-              Enter Sylvexa
+            <a className="header-launch-button" href="/lab">
+              Enter the Lab
               <ArrowUpRight size={16} strokeWidth={1.8} />
             </a>
           </div>
@@ -253,43 +248,23 @@ export default function Home() {
             <motion.nav
               className="header-mobile-menu"
               aria-label="Mobile navigation"
-              initial={{
-                opacity: 0,
-                y: -12,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: -12,
-              }}
-              transition={{
-                duration: 0.22,
-              }}
+              initial={{ opacity: 0, y: -12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
             >
-              <a
-                href="#capabilities"
-                onClick={() => setMenuOpen(false)}
-              >
+              <a href="#building" onClick={() => setMenuOpen(false)}>
                 <span>01</span>
-                Capabilities
+                What we're building
               </a>
 
-              <a href="#system" onClick={() => setMenuOpen(false)}>
+              <a href="#why" onClick={() => setMenuOpen(false)}>
                 <span>02</span>
-                System
+                Why Sylvexa
               </a>
 
-              <a href="#vision" onClick={() => setMenuOpen(false)}>
+              <a href="/lab">
                 <span>03</span>
-                Vision
-              </a>
-
-              <a href="#launch" onClick={() => setMenuOpen(false)}>
-                <span>04</span>
-                Enter Sylvexa
+                Enter the Lab
               </a>
             </motion.nav>
           )}
@@ -306,109 +281,75 @@ export default function Home() {
         >
           <motion.div
             className="eyebrow"
-            initial={{
-              opacity: 0,
-              y: 16,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.65,
-            }}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
           >
             <Sparkles size={15} />
-            The operating layer for modern business
+            We're building something new
           </motion.div>
 
           <motion.h1
-            initial={{
-              opacity: 0,
-              y: 45,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.85,
-              delay: 0.08,
-            }}
+            initial={{ opacity: 0, y: 45 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85 }}
           >
-            Run less
-            <span className="editorial-word">manually.</span>
-            <strong>Move more intelligently.</strong>
+            Something better
+            <span className="editorial-word">is taking shape.</span>
           </motion.h1>
 
           <motion.p
             className="hero-description"
-            initial={{
-              opacity: 0,
-              y: 26,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.75,
-              delay: 0.2,
-            }}
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
           >
-            Sylvexa connects presence, operations, intelligence, and
-            assistance into one deliberate digital environment built around
-            how your business moves.
+            We're building smarter digital tools that help businesses work
+            better, move faster, and do less of the boring stuff.
           </motion.p>
 
           <motion.div
-            className="hero-actions"
-            initial={{
-              opacity: 0,
-              y: 24,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.7,
-              delay: 0.3,
-            }}
+            className="hero-actions hero-actions-stacked"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
           >
-            <a className="primary-button" href="#system">
-              Experience the system
-              <ArrowRight size={17} />
-            </a>
+            <div className="hero-main-actions">
+              <a className="primary-button" href="#building">
+                See what we're building
+                <ArrowRight size={17} />
+              </a>
+
+              <a className="secondary-button" href="/lab">
+                Enter the Sylvexa Lab
+                <FlaskConical size={17} />
+              </a>
+            </div>
 
             <span className="launch-status">
               <span className="status-indicator" />
-              Taking shape
+              Coming soon
             </span>
           </motion.div>
         </motion.div>
 
         <div className="scroll-marker">
           <MousePointer2 size={15} />
-          Scroll to enter
+          Keep scrolling
         </div>
       </section>
 
-      <section className="capabilities-section" id="capabilities">
+      <section className="capabilities-section" id="building">
         <div className="section-introduction centred-introduction">
-          <span className="section-label">The structure</span>
+          <span className="section-label">What we're building</span>
 
           <h2>
-            One connected system.
-            <span className="editorial-word">
-              Three essential layers.
-            </span>
+            Useful technology.
+            <span className="editorial-word">Without the fuss.</span>
           </h2>
 
           <p>
-            Sylvexa is not a collection of unrelated services. Each
-            capability strengthens the next, creating a digital foundation
-            that works as one.
+            Sylvexa is about making the digital side of business feel simpler,
+            clearer, and easier to use.
           </p>
         </div>
 
@@ -420,26 +361,16 @@ export default function Home() {
               <motion.article
                 className="capability-card"
                 key={capability.title}
-                initial={{
-                  opacity: 0,
-                  y: 45,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                  amount: 0.25,
-                }}
+                initial={{ opacity: 0, y: 45 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{
-                  duration: 0.65,
-                  delay: index * 0.1,
+                  duration: 0.6,
+                  delay: index * 0.08,
                 }}
                 whileHover={{
-                  y: -12,
+                  y: -10,
                   rotateX: 2,
-                  rotateY: index === 0 ? -2 : index === 2 ? 2 : 0,
                 }}
               >
                 <div className="capability-card-head">
@@ -462,13 +393,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="dark-interlude">
+      <section className="dark-interlude" id="why">
         <div className="dark-orbit" aria-hidden="true">
           <motion.div
             className="orbit-ring orbit-ring-one"
-            animate={{
-              rotate: 360,
-            }}
+            animate={{ rotate: 360 }}
             transition={{
               duration: 30,
               repeat: Infinity,
@@ -478,9 +407,7 @@ export default function Home() {
 
           <motion.div
             className="orbit-ring orbit-ring-two"
-            animate={{
-              rotate: -360,
-            }}
+            animate={{ rotate: -360 }}
             transition={{
               duration: 24,
               repeat: Infinity,
@@ -491,88 +418,82 @@ export default function Home() {
           <div className="orbit-centre">
             <Layers3 size={38} strokeWidth={1.2} />
           </div>
-
-          <span className="orbit-point orbit-point-one" />
-          <span className="orbit-point orbit-point-two" />
-          <span className="orbit-point orbit-point-three" />
         </div>
 
         <motion.div
           className="dark-interlude-copy"
-          initial={{
-            opacity: 0,
-            y: 35,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.35,
-          }}
-          transition={{
-            duration: 0.75,
-          }}
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
         >
           <span className="section-label section-label-light">
-            Beyond the website
+            Why Sylvexa
           </span>
 
-          <h2>
-            Your digital presence should not be disconnected from the
-            business behind it.
-          </h2>
+          <h2>Good software should feel easy.</h2>
 
           <p>
-            Sylvexa closes the distance between what customers see, what your
-            team does, and what your business needs to know next.
+            Not another dashboard you have to learn. Not another tool your
+            team forgets to use. Just useful technology that helps you get
+            things done.
           </p>
         </motion.div>
       </section>
 
-      <section className="system-section" id="system">
+      <section className="system-section">
         <div className="section-introduction centred-introduction">
-          <span className="section-label">Explore the system</span>
+          <span className="section-label">A little deeper</span>
 
           <h2>
-            Select a layer.
-            <span className="editorial-word">See the shift.</span>
+            Different parts.
+            <span className="editorial-word">One connected idea.</span>
           </h2>
 
           <p>
-            Move through the system to see how each layer changes a different
-            part of the business.
+            Tap through the layers to see the kind of problems Sylvexa is being
+            built to solve.
           </p>
         </div>
 
         <div className="system-interface">
-          <div className="system-tabs" role="tablist">
-            {systemLayers.map((layer) => {
-              const Icon = layer.icon;
-              const selected = activeLayer.id === layer.id;
+          <div className="system-tabs-wrap">
+            <div className="system-tabs" role="tablist">
+              {systemLayers.map((layer) => {
+                const Icon = layer.icon;
+                const selected = activeLayer.id === layer.id;
 
-              return (
-                <button
-                  key={layer.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={selected}
-                  className={`system-tab ${
-                    selected ? "is-active" : ""
-                  }`}
-                  onClick={() => setActiveLayer(layer)}
-                >
-                  <span className="tab-number">{layer.number}</span>
-                  <Icon size={19} strokeWidth={1.6} />
-                  <strong>{layer.label}</strong>
-                </button>
-              );
-            })}
+                return (
+                  <button
+                    key={layer.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={selected}
+                    className={`system-tab ${selected ? "is-active" : ""}`}
+                    onClick={(event) => {
+                      setActiveLayer(layer);
+
+                      if (window.innerWidth <= 680) {
+                        event.currentTarget.scrollIntoView({
+                          behavior: "smooth",
+                          inline: "center",
+                          block: "nearest",
+                        });
+                      }
+                    }}
+                  >
+                    <span className="tab-number">{layer.number}</span>
+
+                    <Icon size={19} strokeWidth={1.6} />
+
+                    <strong>{layer.label}</strong>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           <div className="system-stage">
-            <div className="stage-grid" aria-hidden="true" />
+            <div className="stage-grid" />
 
             <AnimatePresence mode="wait">
               <motion.div
@@ -591,43 +512,28 @@ export default function Home() {
                 exit={{
                   opacity: 0,
                   scale: 0.98,
-                  y: -12,
-                }}
-                transition={{
-                  duration: 0.38,
-                  ease: "easeOut",
                 }}
               >
                 <div className="stage-visual">
                   <motion.div
                     className="stage-plane stage-plane-back"
-                    animate={{
-                      y: [-6, 6, -6],
-                    }}
+                    animate={{ y: [-6, 6, -6] }}
                     transition={{
                       duration: 6,
                       repeat: Infinity,
-                      ease: "easeInOut",
                     }}
                   />
 
                   <motion.div
                     className="stage-plane stage-plane-front"
-                    animate={{
-                      y: [7, -7, 7],
-                    }}
+                    animate={{ y: [7, -7, 7] }}
                     transition={{
                       duration: 5,
                       repeat: Infinity,
-                      ease: "easeInOut",
                     }}
                   >
                     <ActiveLayerIcon size={40} strokeWidth={1.2} />
                   </motion.div>
-
-                  <span className="stage-node stage-node-one" />
-                  <span className="stage-node stage-node-two" />
-                  <span className="stage-node stage-node-three" />
                 </div>
 
                 <div className="stage-copy">
@@ -639,8 +545,8 @@ export default function Home() {
                   <p>{activeLayer.description}</p>
 
                   <div className="stage-outcome">
-                    <Layers3 size={18} strokeWidth={1.5} />
-                    <span>{activeLayer.outcome}</span>
+                    <Layers3 size={18} />
+                    {activeLayer.outcome}
                   </div>
                 </div>
               </motion.div>
@@ -649,131 +555,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="vision-section" id="vision">
-        <div className="vision-sticky">
-          <span className="section-label">The idea</span>
+      <section className="lab-teaser">
+        <span className="section-label">While you wait</span>
 
-          <h2>
-            Technology should make the business feel more
-            <span className="editorial-word">coherent.</span>
-          </h2>
-        </div>
+        <h2>
+          You're early.
+          <span className="editorial-word">You may as well have some fun.</span>
+        </h2>
 
-        <div className="vision-stories">
-          <motion.article
-            initial={{
-              opacity: 0.25,
-              y: 50,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              amount: 0.5,
-            }}
-          >
-            <span>01</span>
-            <h3>Fewer disconnected surfaces.</h3>
+        <p>
+          The main thing isn't ready yet. So we built a small corner of Sylvexa
+          for you to play with.
+        </p>
 
-            <p>
-              Your website, workflows, reporting, and internal tools should
-              reinforce one another rather than live in separate digital
-              worlds.
-            </p>
-          </motion.article>
-
-          <motion.article
-            initial={{
-              opacity: 0.25,
-              y: 50,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              amount: 0.5,
-            }}
-          >
-            <span>02</span>
-            <h3>More visible momentum.</h3>
-
-            <p>
-              Better systems make progress easier to see, decisions easier to
-              make, and the next action easier to understand.
-            </p>
-          </motion.article>
-
-          <motion.article
-            initial={{
-              opacity: 0.25,
-              y: 50,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-            }}
-            viewport={{
-              amount: 0.5,
-            }}
-          >
-            <span>03</span>
-            <h3>Technology shaped around people.</h3>
-
-            <p>
-              The system should support your team’s thinking, not force them
-              to adapt to another generic tool built for nobody in
-              particular.
-            </p>
-          </motion.article>
-        </div>
+        <a className="lab-teaser-button" href="/lab">
+          Enter the Sylvexa Lab
+          <FlaskConical size={18} />
+        </a>
       </section>
 
       <section className="launch-section" id="launch">
-        <div className="launch-object" aria-hidden="true">
-          <motion.div
-            className="launch-cube"
-            animate={{
-              rotateX: [58, 64, 58],
-              rotateY: [0, 12, 0],
-              rotateZ: [45, 50, 45],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <div className="cube-face cube-face-front" />
-            <div className="cube-face cube-face-back" />
-
-            <div className="cube-face cube-face-middle">
-              <Layers3 size={40} strokeWidth={1.15} />
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="launch-copy">
+        <div className="launch-copy launch-copy-centred">
           <span className="section-label section-label-light">
-            Coming into focus
+            Still building
           </span>
 
           <h2>
-            A clearer way to build,
+            We’re making something
             <span className="editorial-word editorial-word-light">
-              operate and grow.
+              worth waiting for.
             </span>
           </h2>
 
           <p>
-            Sylvexa is being shaped for businesses that have outgrown
-            scattered tools, generic digital experiences, and systems that
-            create more work than they remove.
+            Sylvexa is still taking shape. But the idea is simple: make
+            technology more useful, more thoughtful, and much less annoying.
           </p>
 
-          <a className="launch-link" href="mailto:hello@sylvexa.com">
-            Start a conversation
+          <a className="launch-link" href="/lab">
+            Play while you wait
             <ArrowRight size={18} />
           </a>
         </div>
@@ -782,13 +602,13 @@ export default function Home() {
       <footer className="site-footer">
         <a className="footer-brand" href="#top">
           <span className="footer-brand-symbol">
-            <Layers3 size={18} strokeWidth={1.7} />
+            <Layers3 size={18} />
           </span>
 
           <span>SYLVEXA</span>
         </a>
 
-        <p>Build the business behind the brand.</p>
+        <p>Something better is taking shape.</p>
 
         <span>© {new Date().getFullYear()} Sylvexa</span>
       </footer>

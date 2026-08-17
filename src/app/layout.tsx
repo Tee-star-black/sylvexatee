@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Caveat, Instrument_Serif, Manrope, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 
+import MedicalProfessionalPrompt from "@/components/MedicalProfessionalPrompt";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -118,7 +119,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang={siteConfig.language}
       className={`${manrope.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${caveat.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <MedicalProfessionalPrompt />
+      </body>
       <Script
         id="sylvexa-structured-data"
         type="application/ld+json"

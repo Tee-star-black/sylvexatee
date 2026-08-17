@@ -1,150 +1,148 @@
-/* Structural image system: essential photography is layout, accents stay optional. */
+/* Reliable media + mobile header fixes.
+   Essential photography uses real JPG/PNG sources and predictable geometry. */
 
 :root {
   --sylvexa-office-main: url('/images/sylvexa-office-main.jpg');
 }
 
-/* Next/Image can keep optimizing the source, but these rules guarantee a real box. */
-img[src*="sylvexa-office-hero"],
-img[src*="hero%20office"],
-img[src*="hero%2520office"],
-img[src*="sylvexa-office-main"] {
+/* Hide the browser scrollbar while preserving normal page scrolling. */
+html {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Keep actual raster media visible. No opacity tricks, no source swapping. */
+img[src*=".jpg"],
+img[src*=".jpeg"],
+img[src*=".png"] {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  max-width: 100%;
+}
+
+/* Important office-image frames get real dimensions and a dependable fallback JPG. */
+[class*="pageHeroPhoto"],
+[class*="officeStoryImage"],
+[class*="megaVisual"] {
+  position: relative !important;
+  overflow: hidden !important;
+  min-height: 320px !important;
+  background: #e9f4f2 var(--sylvexa-office-main) center / cover no-repeat !important;
+  clip-path: none !important;
+  border-radius: 2px !important;
+}
+
+[class*="pageHeroPhoto"] > img,
+[class*="officeStoryImage"] > img,
+[class*="megaVisual"] > img {
+  position: absolute !important;
+  inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   object-position: center center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-/* Any marketing image frame containing office photography gets predictable geometry. */
-div:has(> img[src*="sylvexa-office-hero"]),
-div:has(> img[src*="hero%20office"]),
-div:has(> img[src*="hero%2520office"]),
-div:has(> img[src*="sylvexa-office-main"]),
-a:has(> img[src*="hero%20office"]),
-a:has(> img[src*="hero%2520office"]) {
-  position: relative !important;
-  min-height: 0 !important;
-  aspect-ratio: 16 / 10;
-  overflow: hidden !important;
-  isolation: isolate;
-  background: #e9f4f2;
-}
-
-/* The tiny secondary office JPG is no longer allowed to carry a full hero. */
-div:has(> img[src*="sylvexa-office-hero"]) {
+/* Homepage hero always uses the full-size JPG, not the tiny secondary image. */
+[class*="officeHero"] {
   background-image:
-    linear-gradient(135deg, rgba(5, 73, 75, .10), rgba(5, 73, 75, 0)),
+    linear-gradient(90deg, rgba(4,47,50,.88) 0%, rgba(6,74,76,.70) 41%, rgba(5,65,66,.25) 72%, rgba(5,58,60,.22) 100%),
     var(--sylvexa-office-main) !important;
-  background-size: cover !important;
   background-position: center center !important;
-}
-
-div:has(> img[src*="sylvexa-office-hero"]) > img {
-  opacity: 0 !important;
-}
-
-/* Full-resolution source stays visible when it is already the intended photograph. */
-div:has(> img[src*="hero%20office"]),
-div:has(> img[src*="hero%2520office"]),
-a:has(> img[src*="hero%20office"]),
-a:has(> img[src*="hero%2520office"]) {
-  background-image: var(--sylvexa-office-main) !important;
   background-size: cover !important;
-  background-position: center center !important;
+  background-repeat: no-repeat !important;
 }
 
-/* Remove fragile perspective, clipping and novelty shapes from essential image frames. */
-main div:has(> img[src*="office"]) {
-  clip-path: none !important;
-  transform: none !important;
-  border-radius: 2px !important;
-  border: 1px solid rgba(11, 143, 143, .16) !important;
-  box-shadow: 0 26px 62px rgba(18, 72, 70, .14) !important;
-}
-
-main div:has(> img[src*="office"]):hover {
-  transform: translateY(-4px) !important;
-  box-shadow: 0 34px 76px rgba(18, 72, 70, .18) !important;
-}
-
-/* Different pages retain character through crop rather than geometry gimmicks. */
-main section:nth-of-type(1) div:has(> img[src*="office"]) {
-  background-position: 54% center !important;
-}
-
-/* Transparent sheets are accents, never the thing holding the layout together. */
-img[src*="split_transparent_assets"] {
+/* Transparent PNG sheets are decorative only. Keep them visible on desktop. */
+img[src*="split_transparent_assets"][src*=".png"] {
   display: block !important;
   visibility: visible !important;
-  max-width: min(160px, 18vw) !important;
+  opacity: .9 !important;
   height: auto !important;
   object-fit: contain !important;
-  filter: drop-shadow(0 14px 20px rgba(17, 73, 71, .16));
 }
 
-/* Give hero accents a readable backing without turning them into giant stickers. */
-main section > img[src*="split_transparent_assets"] {
-  padding: 8px;
-  background: rgba(255, 255, 255, .72);
-  border: 1px solid rgba(11, 143, 143, .12);
-  box-shadow: 0 16px 34px rgba(17, 73, 71, .10);
-}
-
-/* Homepage and shared media should use the same dependable source. */
-main [style*="hero office.jpg"],
-main [style*="hero%20office.jpg"] {
-  background-image: var(--sylvexa-office-main) !important;
-}
-
-/* Images in cards and story sections should never collapse because a parent lacks height. */
-main article img,
-main section img {
-  max-width: 100%;
-}
-
+/* Mobile navigation belongs on the far right. Flexbox has been relieved of this decision. */
 @media (max-width: 980px) {
-  div:has(> img[src*="sylvexa-office-hero"]),
-  div:has(> img[src*="hero%20office"]),
-  div:has(> img[src*="hero%2520office"]),
-  div:has(> img[src*="sylvexa-office-main"]) {
+  [class*="navWrap"] {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  [class*="navActions"] {
+    margin-left: auto !important;
+    justify-content: flex-end !important;
+    position: relative !important;
+    z-index: 110 !important;
+  }
+
+  [class*="mobileMenu"] {
+    margin-left: auto !important;
+    position: relative !important;
+  }
+
+  [class*="mobileMenu"] > summary {
+    margin-left: auto !important;
+    display: grid !important;
+    place-items: center !important;
+  }
+
+  [class*="pageHeroPhoto"],
+  [class*="officeStoryImage"] {
     width: 100% !important;
-    aspect-ratio: 16 / 9;
-    margin-inline: auto;
+    min-height: 300px !important;
+    aspect-ratio: 16 / 10;
   }
 
-  main div:has(> img[src*="office"]) {
-    transform: none !important;
-  }
-
-  /* Decorative assets disappear on tablets/phones instead of overlapping the content. */
-  main section > img[src*="split_transparent_assets"] {
+  /* Decorative PNGs stop competing with content on smaller screens. */
+  main > section > img[src*="split_transparent_assets"][src*=".png"] {
     display: none !important;
   }
 }
 
 @media (max-width: 680px) {
-  div:has(> img[src*="sylvexa-office-hero"]),
-  div:has(> img[src*="hero%20office"]),
-  div:has(> img[src*="hero%2520office"]),
-  div:has(> img[src*="sylvexa-office-main"]) {
-    aspect-ratio: 4 / 3;
-    min-height: 240px !important;
+  [class*="navWrap"] {
+    padding-right: 8px !important;
   }
 
-  img[src*="sylvexa-office-hero"],
-  img[src*="hero%20office"],
-  img[src*="hero%2520office"],
-  img[src*="sylvexa-office-main"] {
+  [class*="navActions"] {
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+
+  [class*="mobileMenu"] > summary {
+    width: 42px !important;
+    height: 42px !important;
+  }
+
+  [class*="pageHeroPhoto"],
+  [class*="officeStoryImage"] {
+    min-height: 250px !important;
+    aspect-ratio: 4 / 3;
+  }
+
+  [class*="pageHeroPhoto"] > img,
+  [class*="officeStoryImage"] > img {
     object-position: 58% center !important;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  main div:has(> img[src*="office"]) {
-    transition: none !important;
+  [class*="pageHeroPhoto"],
+  [class*="officeStoryImage"],
+  [class*="megaVisual"] {
     transform: none !important;
+    transition: none !important;
   }
 }

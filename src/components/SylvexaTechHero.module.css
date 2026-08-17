@@ -1,11 +1,18 @@
 .officeBackdrop {
-  background-image:
-    linear-gradient(90deg, rgba(2, 8, 18, 0.92) 0%, rgba(3, 12, 27, 0.82) 34%, rgba(5, 19, 39, 0.58) 62%, rgba(5, 19, 39, 0.38) 100%),
-    linear-gradient(180deg, rgba(2, 8, 18, 0.18) 0%, rgba(2, 8, 18, 0.42) 100%),
-    url('/images/sylvexa-office-hero.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 8, 18, 0.94) 0%,
+      rgba(3, 13, 26, 0.84) 36%,
+      rgba(3, 13, 26, 0.58) 68%,
+      rgba(2, 8, 18, 0.72) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(4, 12, 24, 0.32) 0%,
+      rgba(2, 8, 18, 0.52) 100%
+    ),
+    url("/images/hero office.jpg") center / cover no-repeat !important;
 }
 
 .officeBackdrop::after {
@@ -15,25 +22,99 @@
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 20% 50%, rgba(48, 152, 222, 0.11), transparent 35%),
-    linear-gradient(180deg, transparent 70%, rgba(2, 8, 18, 0.52) 100%);
+    radial-gradient(circle at 18% 46%, rgba(48, 152, 222, 0.1), transparent 34%),
+    linear-gradient(180deg, transparent 68%, rgba(2, 8, 18, 0.5) 100%);
 }
 
-.officeBackdrop :global(.grid) {
-  opacity: 0.1;
+.assetScatter {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.asset {
+  position: absolute;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  opacity: 0.3;
+  filter: saturate(0.78) drop-shadow(0 18px 28px rgba(0, 0, 0, 0.28));
+  animation: sylvexa-float 8s ease-in-out infinite;
+}
+
+.assetOne {
+  top: 17%;
+  right: 2.5%;
+  width: clamp(82px, 8vw, 132px);
+  aspect-ratio: 1;
+  background-image: url("/images/split_transparent_assets/sheet1_asset_03.png");
+}
+
+.assetTwo {
+  right: 29%;
+  bottom: 16%;
+  width: clamp(58px, 5.6vw, 92px);
+  aspect-ratio: 1;
+  background-image: url("/images/split_transparent_assets/sheet1_asset_07.png");
+  animation-delay: -2.4s;
+}
+
+.assetThree {
+  top: 30%;
+  left: 1.5%;
+  width: clamp(48px, 4.5vw, 76px);
+  aspect-ratio: 1;
+  background-image: url("/images/split_transparent_assets/sheet1_asset_11.png");
+  opacity: 0.2;
+  animation-delay: -4.8s;
+}
+
+@keyframes sylvexa-float {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+  50% { transform: translate3d(0, -10px, 0) rotate(2deg); }
 }
 
 @media (max-width: 900px) {
   .officeBackdrop {
-    background-position: 62% center;
+    background-position: 62% center !important;
   }
+
+  .assetOne { right: -2%; opacity: 0.22; }
+  .assetTwo { right: 8%; bottom: 21%; }
 }
 
 @media (max-width: 700px) {
   .officeBackdrop {
-    background-position: 68% center;
-    background-image:
-      linear-gradient(180deg, rgba(2, 8, 18, 0.9) 0%, rgba(2, 8, 18, 0.76) 52%, rgba(2, 8, 18, 0.9) 100%),
-      url('/images/sylvexa-office-hero.jpg');
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 8, 18, 0.88) 0%,
+        rgba(2, 8, 18, 0.74) 50%,
+        rgba(2, 8, 18, 0.9) 100%
+      ),
+      url("/images/hero office.jpg") 66% center / cover no-repeat !important;
   }
+
+  .assetOne {
+    top: 12%;
+    right: -4%;
+    width: 76px;
+    opacity: 0.18;
+  }
+
+  .assetTwo {
+    right: 8%;
+    bottom: 23%;
+    width: 58px;
+    opacity: 0.22;
+  }
+
+  .assetThree { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .asset { animation: none; }
 }

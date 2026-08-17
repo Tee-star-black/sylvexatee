@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 import styles from "./MedicalProfessionalPrompt.module.css";
 
-const DISMISSED_KEY = "sylvexa-medical-professional-prompt-dismissed";
+const DISMISSED_KEY = "sylvexa-medical-professional-prompt-dismissed-v2";
 
 export default function MedicalProfessionalPrompt() {
   const [visible, setVisible] = useState(false);
@@ -25,11 +25,12 @@ export default function MedicalProfessionalPrompt() {
     const handleScroll = () => {
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
       if (scrollable <= 0) return;
-      if (window.scrollY / scrollable >= 0.36) reveal();
+      if (window.scrollY / scrollable >= 0.18) reveal();
     };
 
-    const timer = window.setTimeout(reveal, 9500);
+    const timer = window.setTimeout(reveal, 4000);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 
     return () => {
       window.clearTimeout(timer);
@@ -45,7 +46,7 @@ export default function MedicalProfessionalPrompt() {
   if (!visible) return null;
 
   return (
-    <aside className={styles.prompt} role="dialog" aria-labelledby="medical-prompt-title" aria-describedby="medical-prompt-copy">
+    <aside className={styles.prompt} role="dialog" aria-labelledby="medical-prompt-title" aria-describedby="medical-prompt-copy" aria-live="polite">
       <div className={styles.signal} aria-hidden="true">
         <span className={styles.signalLine} />
         <span className={styles.iconFrame}><HeartPulse size={19} /></span>

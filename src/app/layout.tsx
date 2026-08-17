@@ -6,6 +6,7 @@ import MedicalProfessionalPrompt from "@/components/MedicalProfessionalPrompt";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 import "./image-system.css";
+import "./mobile-and-popup-fixes.css";
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-body", display: "swap" });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display", display: "swap" });

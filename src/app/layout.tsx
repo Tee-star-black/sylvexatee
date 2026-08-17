@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Caveat, Instrument_Serif, Manrope, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 
+import CookieConsent from "@/components/CookieConsent";
 import MedicalProfessionalPrompt from "@/components/MedicalProfessionalPrompt";
 import { serviceAreas, siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -67,7 +68,7 @@ const serviceSchema = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang={siteConfig.language} className={`${manrope.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${caveat.variable}`}>
-      <body>{children}<MedicalProfessionalPrompt /></body>
+      <body>{children}<MedicalProfessionalPrompt /><CookieConsent /></body>
       <Script id="sylvexa-structured-data" type="application/ld+json" strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([organizationSchema, websiteSchema, serviceSchema]).replace(/</g, "\\u003c") }} />
     </html>

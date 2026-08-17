@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 
+import officeStyles from "./SylvexaHeroOffice.module.css";
 import styles from "./SylvexaTechHero.module.css";
 
 const capabilities = [
@@ -29,7 +30,11 @@ const codeLines = [
 
 export default function SylvexaTechHero() {
   return (
-    <section className={styles.hero} id="top" aria-labelledby="sylvexa-hero-title">
+    <section
+      className={`${styles.hero} ${officeStyles.officeBackdrop}`}
+      id="top"
+      aria-labelledby="sylvexa-hero-title"
+    >
       <div className={styles.grid} aria-hidden="true" />
       <div className={styles.glow} aria-hidden="true" />
 
@@ -37,7 +42,7 @@ export default function SylvexaTechHero() {
         className={styles.blueprint}
         aria-hidden="true"
         initial={{ opacity: 0, x: 44, scale: 0.96 }}
-        animate={{ opacity: 1, x: 0, scale: 1 }}
+        animate={{ opacity: 0.36, x: 0, scale: 1 }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
       >
         <div className={styles.windowFrame}>

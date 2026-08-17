@@ -34,3 +34,17 @@
 .scriptAccent{font-size:clamp(31px,4vw,54px);letter-spacing:-.01em}
 @media(max-width:1100px){.megaPanel{left:50vw;transform:translate(-50%,12px) scale(.985)}.servicesMenu:hover .megaPanel,.servicesMenu:focus-within .megaPanel{transform:translate(-50%,0) scale(1)}}
 @media(max-width:680px){.navWrap,.brandMark,.mobileMenu>summary,.mobilePanel,.mobilePanel>a,.mobileServices>summary,.mobileServiceLinks a,.pageHeroPhoto,.card,.cardIcon,.priceCard,.trustBar,.problemQuote,.officeStoryInner,.testimonial,.step,.faqItem,.contactPanel,.form input,.form select,.form textarea,.finalCta,.mediaPanel{border-radius:2px}.officeHero h1 span{margin-top:6px;line-height:.86;transform:none}.heroServices .pageHeroPhoto,.heroGrowth .pageHeroPhoto,.heroServiceA .pageHeroPhoto,.heroServiceE .pageHeroPhoto,.heroServiceF .pageHeroPhoto{border-radius:2px}}
+
+/* Integrated navigation and resilient media visibility */
+.header{padding:0 18px 24px;background:linear-gradient(180deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.86) 58%,rgba(255,255,255,.42) 78%,rgba(255,255,255,0) 100%)}
+.navWrap{min-height:82px;border:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.brandMark{border-color:rgba(11,143,143,.12);background:rgba(255,255,255,.22);box-shadow:none}
+.pageHeroPhoto img,.officeStoryImage img,.megaVisual img{opacity:1!important;visibility:visible!important;object-position:center center}
+.pageHeroAsset,.floatingAsset,.officeStoryAsset,.finalCtaAsset{display:block!important;visibility:visible!important;opacity:.92!important;z-index:6}
+.pageHeroAsset{right:2.5%;bottom:6%;width:clamp(105px,10vw,175px)}
+.floatingAsset{opacity:.68!important}
+.assetC{display:block!important;opacity:.5!important}
+.officeStoryAsset{opacity:.88!important}
+.finalCtaAsset{opacity:.72!important}
+@media(max-width:980px){.header{padding:0 14px 18px}.navWrap{min-height:74px}.pageHeroAsset{right:2%;bottom:3%;width:92px}.floatingAsset{opacity:.5!important}.assetC{display:block!important;opacity:.36!important}}
+@media(max-width:680px){.header{padding:0 9px 14px;background:linear-gradient(180deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.9) 66%,rgba(255,255,255,0) 100%)}.navWrap{min-height:64px;padding:0 8px 0 11px}.pageHeroAsset{width:76px;right:2%;bottom:2%;opacity:.82!important}.floatingAsset{opacity:.38!important}.assetA{right:1%;top:16%}.assetB{right:3%;bottom:13%}.assetC{display:block!important;left:1%;bottom:12%;opacity:.28!important}.officeStoryAsset{opacity:.76!important}.finalCtaAsset{opacity:.64!important}}

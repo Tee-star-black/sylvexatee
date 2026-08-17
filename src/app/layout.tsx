@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Caveat, DM_Sans, Space_Grotesk } from "next/font/google";
+import { Caveat, Instrument_Serif, Manrope, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const dmSans = DM_Sans({
+const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
@@ -15,6 +15,13 @@ const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  variable: "--font-editorial",
+  display: "swap",
+  weight: "400",
 });
 
 const caveat = Caveat({
@@ -63,7 +70,7 @@ export const metadata: Metadata = {
   icons: { icon: "/icon", apple: "/apple-icon" },
   manifest: "/manifest.webmanifest",
   other: {
-    "theme-color": "#fbf7ef",
+    "theme-color": "#ffffff",
     "color-scheme": "light",
   },
 };
@@ -72,7 +79,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#fbf7ef",
+  themeColor: "#ffffff",
 };
 
 const organizationSchema = {
@@ -109,7 +116,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang={siteConfig.language}
-      className={`${dmSans.variable} ${spaceGrotesk.variable} ${caveat.variable}`}
+      className={`${manrope.variable} ${spaceGrotesk.variable} ${instrumentSerif.variable} ${caveat.variable}`}
     >
       <body>{children}</body>
       <Script

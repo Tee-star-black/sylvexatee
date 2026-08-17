@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 
+import GlobalHeroInjector from "@/components/GlobalHeroInjector";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -183,7 +184,10 @@ export default function RootLayout({
       lang={siteConfig.language}
       className={`${dmSans.variable} ${spaceGrotesk.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <GlobalHeroInjector />
+        {children}
+      </body>
 
       <Script
         id="sylvexa-structured-data"

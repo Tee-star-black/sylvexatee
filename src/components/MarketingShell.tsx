@@ -224,25 +224,101 @@ export function SiteHeader() {
             Start a project <ArrowRight size={15} />
           </Link>
           <details className={styles.mobileMenu}>
-            <summary aria-label="Open navigation">
+            <summary
+              aria-label="Open navigation"
+              style={{
+                background: "rgba(255,255,255,.22)",
+                border: "1px solid rgba(11,143,143,.16)",
+                boxShadow: "none",
+              }}
+            >
               <Menu size={20} />
             </summary>
-            <div className={styles.mobilePanel}>
-              <details className={styles.mobileServices}>
-                <summary>Services <ChevronDown size={15} /></summary>
-                <div className={styles.mobileServiceLinks}>
-                  {megaMenuGroups.flatMap((group) => group.items).map(({ href, title }) => (
-                    <Link key={`mobile-${title}`} href={href}>{title}</Link>
+            <div
+              className={styles.mobilePanel}
+              style={{
+                position: "fixed",
+                top: 64,
+                left: 0,
+                right: 0,
+                width: "100%",
+                maxHeight: "calc(100svh - 64px)",
+                overflowY: "auto",
+                padding: "20px 18px 26px",
+                display: "grid",
+                gap: 0,
+                background: "rgba(255,255,255,.98)",
+                border: 0,
+                borderTop: "1px solid rgba(11,143,143,.16)",
+                borderRadius: 0,
+                boxShadow: "0 22px 44px rgba(16,60,60,.12)",
+                backdropFilter: "blur(18px)",
+              }}
+            >
+              <div style={{ padding: "4px 2px 14px", color: "#78908f", fontSize: 9, fontWeight: 800, letterSpacing: ".16em", textTransform: "uppercase" }}>
+                Navigate Sylvexa
+              </div>
+
+              <details className={styles.mobileServices} style={{ borderTop: "1px solid #d9e8e6", borderBottom: "1px solid #d9e8e6" }}>
+                <summary style={{ minHeight: 54, padding: "0 2px", fontSize: 14, fontWeight: 750, color: "#102d32" }}>
+                  Services <ChevronDown size={16} />
+                </summary>
+                <div className={styles.mobileServiceLinks} style={{ padding: "2px 0 14px" }}>
+                  {megaMenuGroups.map((group) => (
+                    <div key={`mobile-group-${group.label}`} style={{ padding: "10px 0 4px" }}>
+                      <span style={{ display: "block", padding: "0 2px 6px", color: "#0b8f8f", fontSize: 9, fontWeight: 800, letterSpacing: ".13em", textTransform: "uppercase" }}>
+                        {group.label}
+                      </span>
+                      {group.items.map(({ href, title }) => (
+                        <Link
+                          key={`mobile-${group.label}-${title}`}
+                          href={href}
+                          style={{ minHeight: 46, padding: "0 2px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #edf3f2", borderRadius: 0, color: "#405f60", fontSize: 13 }}
+                        >
+                          {title} <ArrowRight size={13} />
+                        </Link>
+                      ))}
+                    </div>
                   ))}
-                  <Link href="/services">All services</Link>
+                  <Link href="/services" style={{ marginTop: 6, padding: "12px 2px", borderRadius: 0, color: "#0b8f8f", fontSize: 12, fontWeight: 800, textTransform: "uppercase", letterSpacing: ".08em" }}>
+                    View all services
+                  </Link>
                 </div>
               </details>
-              {simpleNavigation.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  {item.label}
-                </Link>
-              ))}
-              <Link href="/contact">Contact</Link>
+
+              <nav aria-label="Mobile navigation" style={{ display: "grid" }}>
+                {simpleNavigation.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    style={{ minHeight: 54, padding: "0 2px", display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid #d9e8e6", borderRadius: 0, color: "#102d32", fontSize: 14, fontWeight: 700 }}
+                  >
+                    {item.label} <ArrowRight size={13} />
+                  </Link>
+                ))}
+              </nav>
+
+              <Link
+                href="/contact"
+                style={{
+                  minHeight: 52,
+                  marginTop: 20,
+                  padding: "0 18px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: 9,
+                  color: "#fff",
+                  background: "linear-gradient(145deg,#14a3a0,#08787a)",
+                  borderRadius: 2,
+                  fontSize: 11,
+                  fontWeight: 800,
+                  letterSpacing: ".08em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Start a project <ArrowRight size={15} />
+              </Link>
             </div>
           </details>
         </div>

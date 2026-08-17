@@ -1,0 +1,150 @@
+/* Structural image system: essential photography is layout, accents stay optional. */
+
+:root {
+  --sylvexa-office-main: url('/images/sylvexa-office-main.jpg');
+}
+
+/* Next/Image can keep optimizing the source, but these rules guarantee a real box. */
+img[src*="sylvexa-office-hero"],
+img[src*="hero%20office"],
+img[src*="hero%2520office"],
+img[src*="sylvexa-office-main"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Any marketing image frame containing office photography gets predictable geometry. */
+div:has(> img[src*="sylvexa-office-hero"]),
+div:has(> img[src*="hero%20office"]),
+div:has(> img[src*="hero%2520office"]),
+div:has(> img[src*="sylvexa-office-main"]),
+a:has(> img[src*="hero%20office"]),
+a:has(> img[src*="hero%2520office"]) {
+  position: relative !important;
+  min-height: 0 !important;
+  aspect-ratio: 16 / 10;
+  overflow: hidden !important;
+  isolation: isolate;
+  background: #e9f4f2;
+}
+
+/* The tiny secondary office JPG is no longer allowed to carry a full hero. */
+div:has(> img[src*="sylvexa-office-hero"]) {
+  background-image:
+    linear-gradient(135deg, rgba(5, 73, 75, .10), rgba(5, 73, 75, 0)),
+    var(--sylvexa-office-main) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+div:has(> img[src*="sylvexa-office-hero"]) > img {
+  opacity: 0 !important;
+}
+
+/* Full-resolution source stays visible when it is already the intended photograph. */
+div:has(> img[src*="hero%20office"]),
+div:has(> img[src*="hero%2520office"]),
+a:has(> img[src*="hero%20office"]),
+a:has(> img[src*="hero%2520office"]) {
+  background-image: var(--sylvexa-office-main) !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+/* Remove fragile perspective, clipping and novelty shapes from essential image frames. */
+main div:has(> img[src*="office"]) {
+  clip-path: none !important;
+  transform: none !important;
+  border-radius: 2px !important;
+  border: 1px solid rgba(11, 143, 143, .16) !important;
+  box-shadow: 0 26px 62px rgba(18, 72, 70, .14) !important;
+}
+
+main div:has(> img[src*="office"]):hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 34px 76px rgba(18, 72, 70, .18) !important;
+}
+
+/* Different pages retain character through crop rather than geometry gimmicks. */
+main section:nth-of-type(1) div:has(> img[src*="office"]) {
+  background-position: 54% center !important;
+}
+
+/* Transparent sheets are accents, never the thing holding the layout together. */
+img[src*="split_transparent_assets"] {
+  display: block !important;
+  visibility: visible !important;
+  max-width: min(160px, 18vw) !important;
+  height: auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 14px 20px rgba(17, 73, 71, .16));
+}
+
+/* Give hero accents a readable backing without turning them into giant stickers. */
+main section > img[src*="split_transparent_assets"] {
+  padding: 8px;
+  background: rgba(255, 255, 255, .72);
+  border: 1px solid rgba(11, 143, 143, .12);
+  box-shadow: 0 16px 34px rgba(17, 73, 71, .10);
+}
+
+/* Homepage and shared media should use the same dependable source. */
+main [style*="hero office.jpg"],
+main [style*="hero%20office.jpg"] {
+  background-image: var(--sylvexa-office-main) !important;
+}
+
+/* Images in cards and story sections should never collapse because a parent lacks height. */
+main article img,
+main section img {
+  max-width: 100%;
+}
+
+@media (max-width: 980px) {
+  div:has(> img[src*="sylvexa-office-hero"]),
+  div:has(> img[src*="hero%20office"]),
+  div:has(> img[src*="hero%2520office"]),
+  div:has(> img[src*="sylvexa-office-main"]) {
+    width: 100% !important;
+    aspect-ratio: 16 / 9;
+    margin-inline: auto;
+  }
+
+  main div:has(> img[src*="office"]) {
+    transform: none !important;
+  }
+
+  /* Decorative assets disappear on tablets/phones instead of overlapping the content. */
+  main section > img[src*="split_transparent_assets"] {
+    display: none !important;
+  }
+}
+
+@media (max-width: 680px) {
+  div:has(> img[src*="sylvexa-office-hero"]),
+  div:has(> img[src*="hero%20office"]),
+  div:has(> img[src*="hero%2520office"]),
+  div:has(> img[src*="sylvexa-office-main"]) {
+    aspect-ratio: 4 / 3;
+    min-height: 240px !important;
+  }
+
+  img[src*="sylvexa-office-hero"],
+  img[src*="hero%20office"],
+  img[src*="hero%2520office"],
+  img[src*="sylvexa-office-main"] {
+    object-position: 58% center !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main div:has(> img[src*="office"]) {
+    transition: none !important;
+    transform: none !important;
+  }
+}

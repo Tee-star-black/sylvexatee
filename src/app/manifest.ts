@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: siteConfig.name,
+    name: `${siteConfig.name} — soon to be ${siteConfig.upcomingTradeName}`,
     short_name: siteConfig.name,
 
     description: siteConfig.shortDescription,
@@ -22,7 +22,7 @@ export default function manifest(): MetadataRoute.Manifest {
     icons: [
       {
         src: "/icon",
-        sizes: "32x32",
+        sizes: "64x64",
         type: "image/png",
       },
       {

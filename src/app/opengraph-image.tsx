@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
 export const alt =
-  "Sylvexa — The operating layer for modern business";
+  "Sylvexa — business systems, automation and digital products. Soon to be trading as Bohlal-itech.";
 
 export const size = {
   width: 1200,
@@ -24,7 +24,7 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           overflow: "hidden",
-          padding: "70px",
+          padding: "64px 70px",
           color: "#111412",
           background: "#f5f4ef",
           fontFamily: "Arial, sans-serif",
@@ -53,42 +53,78 @@ export default function OpenGraphImage() {
             position: "relative",
             display: "flex",
             alignItems: "center",
-            gap: 18,
+            justifyContent: "space-between",
           }}
         >
           <div
             style={{
-              width: 58,
-              height: 58,
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
-              color: "#ffffff",
-              background: "#111412",
-              borderBottom: "8px solid #087f68",
-              fontSize: 28,
-              fontWeight: 800,
+              gap: 18,
             }}
           >
-            S
+            <div
+              style={{
+                position: "relative",
+                width: 58,
+                height: 58,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                overflow: "hidden",
+                color: "#ffffff",
+                background: "#111412",
+                fontSize: 28,
+                fontWeight: 800,
+              }}
+            >
+              S
+              <div
+                style={{
+                  position: "absolute",
+                  right: -9,
+                  bottom: -9,
+                  width: 24,
+                  height: 24,
+                  background: "#087f68",
+                  transform: "rotate(45deg)",
+                }}
+              />
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                fontSize: 25,
+                fontWeight: 800,
+                letterSpacing: "0.22em",
+              }}
+            >
+              SYLVEXA
+            </div>
           </div>
 
           <div
             style={{
               display: "flex",
-              fontSize: 25,
-              fontWeight: 800,
-              letterSpacing: "0.22em",
+              alignItems: "center",
+              gap: 10,
+              padding: "10px 14px",
+              color: "#087f68",
+              background: "#ffffff",
+              border: "1px solid #cfd4d1",
+              fontSize: 15,
+              fontWeight: 700,
             }}
           >
-            SYLVEXA
+            Soon to be trading as Bohlal-itech
           </div>
         </div>
 
         <div
           style={{
             position: "relative",
-            width: 920,
+            width: 940,
             display: "flex",
             flexDirection: "column",
             gap: 22,
@@ -98,29 +134,29 @@ export default function OpenGraphImage() {
             style={{
               display: "flex",
               flexDirection: "column",
-              fontSize: 72,
+              fontSize: 70,
               fontWeight: 700,
               letterSpacing: "-0.055em",
               lineHeight: 0.97,
             }}
           >
-            <span>Run less manually.</span>
+            <span>Better systems.</span>
 
             <span
               style={{
                 color: "#087f68",
               }}
             >
-              Move more intelligently.
+              Less friction.
             </span>
           </div>
 
           <div
             style={{
-              width: 780,
+              width: 820,
               display: "flex",
               color: "#606a66",
-              fontSize: 24,
+              fontSize: 23,
               lineHeight: 1.45,
             }}
           >
@@ -135,12 +171,12 @@ export default function OpenGraphImage() {
             alignItems: "center",
             justifyContent: "space-between",
             borderTop: "1px solid #cfd4d1",
-            paddingTop: 24,
+            paddingTop: 22,
             color: "#56605c",
             fontSize: 18,
           }}
         >
-          <span>The operating layer for modern business</span>
+          <span>Digital products · Business systems · Automation</span>
 
           <span
             style={{

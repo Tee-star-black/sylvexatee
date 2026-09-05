@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 
+import { BrandTransitionNotice } from "@/components/BrandTransitionNotice";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: `${siteConfig.name} — The operating layer for modern business`,
+        alt: `${siteConfig.name} — business systems, automation and digital products`,
       },
     ],
   },
@@ -87,8 +88,12 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/icon",
-    apple: "/apple-icon",
+    icon: [
+      { url: "/icon", type: "image/png", sizes: "64x64" },
+    ],
+    apple: [
+      { url: "/apple-icon", type: "image/png", sizes: "180x180" },
+    ],
   },
 
   manifest: "/manifest.webmanifest",
@@ -183,7 +188,10 @@ export default function RootLayout({
       lang={siteConfig.language}
       className={`${dmSans.variable} ${spaceGrotesk.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <BrandTransitionNotice />
+      </body>
 
       <Script
         id="sylvexa-structured-data"

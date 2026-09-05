@@ -163,11 +163,19 @@ export function SiteHeader() {
   return (
     <header className={styles.header}>
       <div className={styles.navWrap}>
-        <Link href="/" className={styles.brand} aria-label="Sylvexa home">
+        <Link href="/" className={styles.brand} aria-label="Sylvexa, soon to be trading as Bohlal-itech, home">
           <span className={styles.brandMark}>
             <Layers3 size={18} />
           </span>
-          <span>SYLVEXA</span>
+          <span style={{ display: "inline-flex", alignItems: "baseline", gap: 6 }}>
+            <span>SYLVEXA</span>
+            <span aria-hidden="true" style={{ color: "#93aaa8", fontSize: 10, letterSpacing: 0 }}>
+              →
+            </span>
+            <span style={{ color: "#0b8f8f", fontSize: 9, fontWeight: 800, letterSpacing: ".08em" }}>
+              BOHLAL-ITECH
+            </span>
+          </span>
         </Link>
 
         <nav className={styles.desktopNav} aria-label="Primary navigation">

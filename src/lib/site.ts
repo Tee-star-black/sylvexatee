@@ -1,4 +1,4 @@
-const fallbackUrl = "http://localhost:3000";
+const fallbackUrl = "https://sylvexa.co.za";
 
 function getSiteUrl(): string {
   const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
@@ -13,15 +13,17 @@ function getSiteUrl(): string {
 export const siteConfig = {
   name: "Sylvexa",
   legalName: "Sylvexa",
+  upcomingTradeName: "Bohlal-itech",
+  brandTransition: "Sylvexa - soon to be trading as Bohlal-itech",
   url: getSiteUrl(),
 
-  title: "Sylvexa | The Operating Layer for Modern Business",
+  title: "Sylvexa | Business Systems, Automation & Digital Products",
 
   shortDescription:
-    "Sylvexa connects digital presence, business systems, intelligence, and practical assistant tools into one focused digital environment.",
+    "Sylvexa builds connected digital products, business systems, automation, and practical software for modern teams. Soon to be trading as Bohlal-itech.",
 
   description:
-    "Sylvexa helps modern businesses connect their digital presence, operations, workflows, intelligence, and assistant tools into one deliberate system built for clarity, momentum, and growth.",
+    "Sylvexa builds connected digital products, custom business systems, workflow automation, intelligent tools, and modern web experiences that help businesses work with more clarity and less friction. Sylvexa will soon be trading as Bohlal-itech.",
 
   email: "hello@sylvexa.com",
 
@@ -30,6 +32,8 @@ export const siteConfig = {
 
   keywords: [
     "Sylvexa",
+    "Bohlal-itech",
+    "Bohlal iTech",
     "business systems",
     "digital transformation",
     "custom business software",
@@ -41,5 +45,6 @@ export const siteConfig = {
     "software solutions",
     "custom dashboards",
     "business automation",
+    "digital product development",
   ],
 } as const;

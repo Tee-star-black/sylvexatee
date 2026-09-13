@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Organic technology campus</title>
+  <desc id="desc">A warm futuristic technology campus with curved architecture, greenery, water, digital surfaces and space for Bohlal-itech's technology brick system.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3ecdd"/>
+      <stop offset=".42" stop-color="#dfe7d8"/>
+      <stop offset="1" stop-color="#a9c3bd"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8dd" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#e8d5a7" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d9eee5" stop-opacity=".8"/>
+      <stop offset=".55" stop-color="#7faaa0" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#2c6659" stop-opacity=".84"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f9f4e7"/>
+      <stop offset="1" stop-color="#c9c3b2"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#b7d3c8" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#365f54" stop-opacity=".9"/>
+    </linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#446955"/>
+      <stop offset="1" stop-color="#1d4436"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#173f32" flood-opacity=".18"/>
+    </filter>
+    <filter id="texture" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="9" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="f">
+        <feFuncA type="table" tableValues="0 .055"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="f" mode="multiply"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <ellipse cx="495" cy="222" rx="360" ry="290" fill="url(#sun)"/>
+
+  <!-- distant landscape -->
+  <path d="M0 520C156 455 293 470 430 520C562 568 703 565 844 509C1013 442 1168 445 1316 512C1425 561 1519 579 1600 560V900H0Z" fill="#7a987b" opacity=".55"/>
+  <path d="M0 600C171 542 332 549 482 603C652 665 823 637 985 571C1157 502 1317 520 1600 640V900H0Z" fill="url(#hill)"/>
+
+  <!-- skyline -->
+  <g opacity=".58" fill="#52796d">
+    <path d="M610 395h40v124h-40z"/><path d="M660 336h54v183h-54z"/><path d="M724 282h44v237h-44z"/><path d="M778 355h52v164h-52z"/>
+    <path d="M692 336l27-60 26 60z"/><path d="M734 282l12-51 11 51z"/>
+  </g>
+
+  <!-- curved organic campus -->
+  <g filter="url(#softShadow)">
+    <path d="M790 247C934 162 1110 148 1261 205C1382 250 1478 345 1532 450L1518 655H783C836 554 847 455 790 247Z" fill="#e7e3d5"/>
+    <path d="M878 235C1002 191 1128 197 1235 238C1340 278 1425 355 1476 438L1464 620H844C903 526 916 428 878 235Z" fill="#f7f2e7"/>
+    <path d="M972 226C1070 204 1167 213 1249 246C1336 282 1404 341 1443 409L1437 581H936C986 503 1000 411 972 226Z" fill="url(#glass)" opacity=".96"/>
+    <path d="M811 353C977 291 1163 286 1327 335C1426 365 1501 409 1563 466" fill="none" stroke="#f8f5ec" stroke-width="25" stroke-linecap="round"/>
+    <path d="M829 397C992 341 1166 337 1321 378C1414 402 1484 438 1543 487" fill="none" stroke="#d8d1c0" stroke-width="13" stroke-linecap="round"/>
+    <path d="M850 442C1001 394 1161 391 1301 426C1388 447 1452 478 1506 520" fill="none" stroke="#f7f3e9" stroke-width="20" stroke-linecap="round"/>
+  </g>
+
+  <!-- planted terraces -->
+  <g>
+    <path d="M816 331C933 287 1028 279 1128 294" fill="none" stroke="#315f48" stroke-width="18" stroke-linecap="round"/>
+    <path d="M865 377C982 338 1084 332 1196 347" fill="none" stroke="#476f55" stroke-width="16" stroke-linecap="round"/>
+    <path d="M909 421C1026 388 1140 388 1253 407" fill="none" stroke="#315f48" stroke-width="15" stroke-linecap="round"/>
+    <g fill="#6d8f69">
+      <circle cx="852" cy="323" r="24"/><circle cx="895" cy="310" r="27"/><circle cx="944" cy="300" r="23"/><circle cx="992" cy="295" r="29"/>
+      <circle cx="927" cy="367" r="24"/><circle cx="972" cy="352" r="25"/><circle cx="1020" cy="347" r="22"/><circle cx="1064" cy="342" r="28"/>
+      <circle cx="990" cy="412" r="25"/><circle cx="1036" cy="400" r="23"/><circle cx="1086" cy="398" r="27"/><circle cx="1134" cy="398" r="22"/>
+    </g>
+  </g>
+
+  <!-- foreground pool -->
+  <path d="M302 616C551 561 846 574 1086 628C1292 675 1450 680 1600 648V900H280C317 802 324 701 302 616Z" fill="url(#water)" opacity=".72"/>
+  <path d="M376 671C610 626 822 637 1040 679C1234 716 1401 720 1547 695" fill="none" stroke="#ecf1e9" stroke-width="3" opacity=".55"/>
+  <path d="M398 721C623 686 829 693 1028 728C1203 759 1356 763 1502 746" fill="none" stroke="#dfe8df" stroke-width="2" opacity=".4"/>
+
+  <!-- work terrace and glass screens -->
+  <g filter="url(#softShadow)">
+    <path d="M917 557h406l56 78H866Z" fill="#ded7c6"/>
+    <path d="M951 478h112v75H951z" fill="#2b5d52" opacity=".75"/>
+    <path d="M1087 457h141v96h-141z" fill="#2d6658" opacity=".68"/>
+    <path d="M1248 492h91v61h-91z" fill="#3d7566" opacity=".72"/>
+    <g stroke="#b9ded3" opacity=".7" fill="none">
+      <path d="M972 526h55l15-22 18 9"/>
+      <path d="M1110 519h31l15-26 28 12 25-18"/>
+      <path d="M1267 531h19l11-16 24 6"/>
+    </g>
+  </g>
+
+  <!-- people / human scale -->
+  <g fill="#183c31" opacity=".88">
+    <circle cx="916" cy="566" r="9"/><path d="M909 576h14l9 44h-32z"/>
+    <circle cx="1377" cy="561" r="8"/><path d="M1371 570h12l8 40h-28z"/>
+    <circle cx="1326" cy="574" r="7"/><path d="M1321 581h11l7 35h-25z"/>
+  </g>
+
+  <!-- left organic framing -->
+  <g opacity=".96">
+    <path d="M0 95C93 42 199 31 308 61C238 90 182 149 143 234C98 192 49 152 0 130Z" fill="#365f46"/>
+    <path d="M0 775C132 695 259 690 390 740C262 782 167 834 86 900H0Z" fill="#214b39"/>
+    <g fill="#78956d">
+      <ellipse cx="95" cy="112" rx="34" ry="75" transform="rotate(-37 95 112)"/>
+      <ellipse cx="165" cy="86" rx="28" ry="66" transform="rotate(-18 165 86)"/>
+      <ellipse cx="80" cy="806" rx="38" ry="84" transform="rotate(31 80 806)"/>
+      <ellipse cx="177" cy="775" rx="30" ry="72" transform="rotate(18 177 775)"/>
+    </g>
+  </g>
+
+  <!-- subtle digital network, now secondary rather than dominant -->
+  <g opacity=".18" stroke="#153e33" fill="none" stroke-width="2">
+    <path d="M88 449C247 373 405 386 518 454C618 514 711 528 808 487"/>
+    <path d="M176 512C298 463 425 469 529 522C614 566 706 573 786 542"/>
+  </g>
+  <g fill="#19493b" opacity=".32">
+    <circle cx="88" cy="449" r="6"/><circle cx="277" cy="392" r="5"/><circle cx="518" cy="454" r="6"/><circle cx="808" cy="487" r="6"/>
+    <circle cx="176" cy="512" r="5"/><circle cx="529" cy="522" r="5"/><circle cx="786" cy="542" r="5"/>
+  </g>
+
+  <!-- fine texture gives the vector scene a more image-like surface -->
+  <rect width="1600" height="900" fill="transparent" filter="url(#texture)" opacity=".9"/>
+</svg>

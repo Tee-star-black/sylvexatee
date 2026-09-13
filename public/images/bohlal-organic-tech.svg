@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Organic technology landscape</title>
+  <desc id="desc">A calm futuristic technology campus with organic forms, network paths and digital nodes.</desc>
+  <rect width="1600" height="900" fill="#eee9de"/>
+
+  <path d="M0 690C210 610 354 650 520 702C708 762 900 742 1082 650C1271 554 1410 560 1600 648V900H0Z" fill="#163f33"/>
+  <path d="M0 745C214 692 380 720 548 770C742 828 960 785 1124 700C1290 614 1443 646 1600 720V900H0Z" fill="#235744"/>
+  <path d="M0 798C230 757 430 792 612 831C808 873 1042 840 1210 760C1364 687 1487 705 1600 759V900H0Z" fill="#5f8064"/>
+
+  <circle cx="1250" cy="214" r="258" fill="#d5dfcd"/>
+  <circle cx="1216" cy="208" r="184" fill="#f6f2e9"/>
+  <circle cx="1216" cy="208" r="130" fill="none" stroke="#244f3f" stroke-width="2" opacity=".24"/>
+  <circle cx="1216" cy="208" r="92" fill="none" stroke="#244f3f" stroke-width="2" opacity=".18"/>
+  <path d="M1035 214H1398M1216 28V389M1087 86L1344 336M1344 86L1087 336" fill="none" stroke="#244f3f" stroke-width="2" opacity=".12"/>
+
+  <g opacity=".94">
+    <path d="M792 516C850 344 982 270 1117 286C1235 300 1326 372 1388 485L1388 653H746Z" fill="#f8f5ed"/>
+    <path d="M840 519C886 390 986 336 1091 345C1187 353 1262 408 1312 500L1312 653H808Z" fill="#c9d8c5"/>
+    <path d="M898 523C933 439 997 401 1068 406C1134 411 1183 451 1218 516L1218 653H874Z" fill="#f8f5ed"/>
+    <path d="M750 536C902 467 1057 454 1212 488C1327 512 1433 564 1525 630" fill="none" stroke="#254f3e" stroke-width="11" opacity=".18"/>
+    <path d="M782 567C935 500 1085 494 1230 526C1342 551 1436 594 1522 650" fill="none" stroke="#719276" stroke-width="6" opacity=".30"/>
+  </g>
+
+  <g opacity=".6" stroke="#1d5140" fill="none">
+    <path d="M160 186C276 110 420 108 522 176C615 238 651 350 736 392C819 432 919 390 1008 328" stroke-width="2"/>
+    <path d="M195 224C316 148 438 154 529 215C609 269 650 360 727 402C806 445 901 418 981 366" stroke-width="1.5"/>
+    <path d="M120 273C250 200 389 207 485 272C570 330 607 401 682 442" stroke-width="1.5"/>
+  </g>
+
+  <g fill="#1d5140">
+    <circle cx="160" cy="186" r="6"/>
+    <circle cx="318" cy="128" r="5"/>
+    <circle cx="522" cy="176" r="6"/>
+    <circle cx="736" cy="392" r="5"/>
+    <circle cx="1008" cy="328" r="6"/>
+    <circle cx="195" cy="224" r="4"/>
+    <circle cx="529" cy="215" r="4"/>
+    <circle cx="727" cy="402" r="4"/>
+    <circle cx="981" cy="366" r="4"/>
+  </g>
+
+  <g opacity=".23" stroke="#163f33" stroke-width="1">
+    <path d="M0 116H1600M0 198H1600M0 280H1600M0 362H1600M0 444H1600M0 526H1600M0 608H1600"/>
+    <path d="M117 0V650M241 0V650M365 0V650M489 0V650M613 0V650M737 0V650M861 0V650M985 0V650M1109 0V650M1233 0V650M1357 0V650M1481 0V650"/>
+  </g>
+
+  <g>
+    <path d="M131 613C198 513 266 471 347 479C423 486 475 532 535 620" fill="#c8d8c1"/>
+    <path d="M189 620C235 551 280 524 336 530C387 535 426 565 465 622" fill="#f5f1e8"/>
+    <path d="M77 651C221 606 344 607 493 651" fill="none" stroke="#214f3d" stroke-width="14" opacity=".22"/>
+  </g>
+
+  <g fill="#f7f3ea" stroke="#325c49" stroke-width="2" opacity=".86">
+    <rect x="1048" y="118" width="182" height="94" rx="6"/>
+    <rect x="1252" y="252" width="188" height="102" rx="6"/>
+    <rect x="910" y="230" width="160" height="88" rx="6"/>
+  </g>
+  <g stroke="#3b6b55" stroke-width="2" opacity=".55">
+    <path d="M1076 180h74l20-28 34 13" fill="none"/>
+    <path d="M1280 315h38l22-35 38 13 34-27" fill="none"/>
+    <path d="M938 284h43l18-26 43 10" fill="none"/>
+  </g>
+  <g fill="#3b6b55" opacity=".8">
+    <circle cx="1076" cy="180" r="4"/><circle cx="1150" cy="180" r="4"/><circle cx="1170" cy="152" r="4"/><circle cx="1204" cy="165" r="4"/>
+    <circle cx="1280" cy="315" r="4"/><circle cx="1318" cy="315" r="4"/><circle cx="1340" cy="280" r="4"/><circle cx="1378" cy="293" r="4"/><circle cx="1412" cy="266" r="4"/>
+    <circle cx="938" cy="284" r="4"/><circle cx="981" cy="284" r="4"/><circle cx="999" cy="258" r="4"/><circle cx="1042" cy="268" r="4"/>
+  </g>
+</svg>

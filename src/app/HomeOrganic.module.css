@@ -10,7 +10,7 @@
 .heroArtwork{
   position:absolute;
   inset:0;
-  background:url('/images/bohlal-organic-tech.svg') 56% center/cover no-repeat;
+  background:url('/images/bohlal-organic-tech-hero.jpg') 56% center/cover no-repeat;
   transform:scale(1.01);
 }
 

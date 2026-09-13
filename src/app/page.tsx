@@ -31,23 +31,15 @@ const techBricks = [
   ["AI / LLMs", "Intelligence"],
   ["Gemini", "Models"],
   ["Vertex AI", "Platform"],
-  ["Agents", "Orchestration"],
   ["Full Stack", "Product"],
   ["Next.js", "Web"],
   ["React", "Interface"],
   ["TypeScript", "Language"],
-  ["Node.js", "Runtime"],
-  ["NestJS", "Backend"],
   ["PostgreSQL", "Data"],
-  ["Prisma", "Data layer"],
   ["Google Cloud", "Cloud"],
-  ["Cloud Run", "Compute"],
-  ["Pub/Sub", "Events"],
-  ["Firebase", "Platform"],
   ["Docker", "Containers"],
   ["Automation", "Workflow"],
   ["Integrations", "Connected"],
-  ["Data", "Insight"],
 ] as const;
 
 const architectureLayers = [
@@ -77,7 +69,6 @@ export default function HomePage() {
       <section className={home.hero}>
         <div className={home.heroArtwork} aria-hidden="true" />
         <div className={home.heroWash} aria-hidden="true" />
-        <div className={home.transitionNote}>Sylvexa is evolving into Bohlal-itech. Same intent, broader systems thinking.</div>
 
         <div className={home.heroInner}>
           <div className={home.heroCopy}>
